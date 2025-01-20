@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Cadastro de vagas</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="images/logo-senai-claro.png" alt="Logo-senai">
+    </div>
+    <div class="container">
+        <h1>Cadastro de Novas vagas</h1>
+        <form id="formCadastroVaga">
+            <div class="form-group">
+                <label for="nome">Nome da Empresa</label>
+                <input type="text" id="nome" name="nome" required placeholder="Nome da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="nomeVaga">Nome da vaga</label>
+                <input type="text" id="nomeVaga" name="nomeVaga" required placeholder="nome da vaga da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="descrição">Descrição</label>
+                <input type="text" id="descricao_vaga" name="descricao_vaga" required
+                    placeholder="Descrição da vaga da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="tipo_vaga">Tipo</label>
+                <input type="text" id="tipo_vaga" name="tipo_vaga" required
+                    placeholder="Tipo da vaga ex: Jovem Aprendiz">
+            </div>
+
+            <div class="form-group">
+                <label for="requisitos da vaga">Requisitos</label>
+                <select id="requisitos_vaga" name="requisitos_vaga" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Endereço da vaga">Endereço</label>
+                <input type="text" id="endereco_vaga" name="endereco_vaga" required placeholder="Endereço da vaga">
+            </div>
+
+            <div class="form-group">
+                <label for="região">Região</label>
+                <input type="text" id="regiao_vaga" name="regiao_vaga" required placeholder="Região da vaga ex: sul ">
+            </div>
+
+            <div class="form-group">
+                <label for="Bolsa_vaga">Valor da Bolsa da vaga</label>
+                <input type="text" id="bolsa_vaga" name="bolsa_vaga" step="0.01" min="0" required
+                    placeholder="Digite o valor da bolsa" oninput="formatarSalario(this)">
+            </div>
+
+            <div class="form-group">
+                <label for="beneficios da vaga">benefícios da vaga</label>
+                <select id="beneficios_vaga" name="beneficios_vaga" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="desc_benef_vaga">Descrição dos benefícios da vaga</label>
+                <input type="text" id="desc_benef_vaga" name="desc_benef_vaga" placeholder="opcional ">
+            </div>
+
+            <div class="form-group">
+                <label for="carga_horaria">Carga Horária</label>
+                <input type="text" id="carga_horaria" name="carga_horaria" required
+                    placeholder="Digite a carga horária">
+            </div>
+
+            <div class="form-group">
+                <label for="contrato">Contrato</label>
+                <select id="Contrato" name="Contrato" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="1 ano">1 ano</option>
+                    <option value="2 anos">2 anos</option>
+                    <option value="3 anos">3 anos</option>
+                    <option value="4 anos">4 anos</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="data_conclusao">Data de Conclusão do Curso</label>
+                <input type="date" id="data_conclusao" name="data_conclusao" required>
+            </div>
+
+            <div class="form-group">
+                <label for="flexibilidadeVaga">Flexibilidade da vaga</label>
+                <select id="flex_vaga" name="flex_vaga" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vagaPCD">A vaga é para PCD ?</label>
+                <select id="vaga_pcd" name="vaga_pcd" required>
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Cadastrar Vaga</button>
+            <p id="message"></p>
+
+            <p class="voltar-link">
+                <a href="../../sistema-aluno-main/portal-emp.html">Voltar para a página inicial</a>
+            </p>
+            
+        </form>
+    </div>
+
+    <script>
+        function formatarSalario(input) {
+            let valor = input.value.replace(/[^\d,]/g, '').replace(',', '.');
+            if (valor === "") {
+                input.value = '';
+                return;
+            }
+
+            let numeroFormatado = parseFloat(valor).toFixed(2);
+            input.value = 'R$ ' + numeroFormatado.replace('.', ',');
+        }
+
+        document.getElementById('formCadastroVaga').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Impede o envio do formulário tradicional
+
+            const nome = document.getElementById('nome').value;
+            const nome_vaga = document.getElementById('nomeVaga').value;
+            const descricao_vaga = document.getElementById('descricao_vaga').value;
+            const tipo_vaga = document.getElementById('tipo_vaga').value;
+            const requisitos_vaga = document.getElementById('requisitos_vaga').value;
+            const endereco_vaga = document.getElementById('endereco_vaga').value;
+            const regiao_vaga = document.getElementById('regiao_vaga').value;
+            const bolsa_vaga = document.getElementById('bolsa_vaga').value.replace(/[^\d.,]/g, '').replace(',', '.');
+            const beneficios_Vaga = document.getElementById('beneficios_vaga').value;
+            const desc_benef_vaga = document.getElementById('desc_benef_vaga').value.trim() || null;
+            const carga_horaria = document.getElementById('carga_horaria').value;
+            const contrato = document.getElementById('Contrato').value;
+            const data_conclusao = document.getElementById('data_conclusao').value;
+            const flex_vaga = document.getElementById('flex_vaga').value;
+            const vaga_pcd = document.getElementById('vaga_pcd').value;
+
+            const data = {
+                nome, nome_vaga, descricao_vaga, tipo_vaga, requisitos_vaga, endereco_vaga, regiao_vaga, bolsa_vaga, 
+                beneficios_Vaga, desc_benef_vaga, carga_horaria, contrato, data_conclusao, flex_vaga, vaga_pcd
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/cadastrar-vaga', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const jsonResponse = await response.json();
+                const messageElement = document.getElementById('message');
+
+                if (response.ok) {
+                    messageElement.style.color = 'green';
+                    messageElement.textContent = jsonResponse.message;
+                } else {
+                    messageElement.style.color = 'red';
+                    messageElement.textContent = `Erro: ${jsonResponse.message}`;
+                }
+            } catch (error) {
+                console.error('Erro ao enviar os dados:', error);
+                const messageElement = document.getElementById('message');
+                messageElement.style.color = 'red';
+                messageElement.textContent = 'Erro ao enviar os dados. Tente novamente.';
+            }
+        });
+    </script>
+</body>
+</html>

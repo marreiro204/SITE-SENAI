@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Cadastro de Empresas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="images/logo-senai-claro.png" alt="Logo-senai">
+    </div>
+
+    <div class="container">
+        <h1>Cadastro de Nova Empresa</h1>
+        <form id="formCadastro">
+            <div class="form-group">
+                <label for="nome">Nome da Empresa</label>
+                <input type="text" id="nome" name="nome" required placeholder="Nome da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" id="cnpj" name="cnpj" required placeholder="CNPJ da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco" required placeholder="Endereço da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="nome_fantasia">Nome Fantasia</label>
+                <input type="text" id="nome_fantasia" name="nome_fantasia" required placeholder="Nome fantasia da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="setor da empresa">Setor</label>
+                <input type="text" id="setor_empresa" name="setor_empresa" required placeholder="Setor da empresa">
+            </div>
+
+            <div class="form-group">
+                <label for="regiao da empresa">Região da empresa</label>
+                <input type="text" id="regiao_empresa" name="regiao_empresa" required placeholder="Região da empresa">
+            </div>
+
+
+            <div class="form-group">
+                <label for="qtd.vagas">vagas</label>
+                <input type="number" id="vagas_empresa" name="vagas_empresa" required placeholder="Quantidade de vagas ">
+            </div>
+
+            <button type="submit" class="submit-btn">Cadastrar Empresa</button>
+            <p id="message"></p>
+
+            <p class="voltar-link">
+                <a href="index.html">Voltar para a página inicial</a>
+            </p>
+        </form>
+    </div>
+ 
+    <script>
+        // Lidar com o envio do formulário
+        document.getElementById('formCadastro').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Impede o envio do formulário tradicional
+
+            // Captura os dados dos campos do formulário
+            const nome = document.getElementById('nome').value;
+            const cnpj = document.getElementById('cnpj').value;
+            const endereco = document.getElementById('endereco').value;
+            const nome_fantasia = document.getElementById('nome_fantasia').value;
+            const setor_empresa = document.getElementById('setor_empresa').value;
+            const regiao_empresa = document.getElementById('regiao_empresa').value;
+            const vagas_empresa = document.getElementById('vagas_empresa').value;
+            
+
+            try {
+                // Envia os dados para o backend (API)
+                const response = await fetch('http://localhost:3000/cadastrar-empresa', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nome, cnpj, endereco, nome_fantasia, setor_empresa, regiao_empresa,vagas_empresa })
+                });
+
+                const data = await response.json();
+                const messageElement = document.getElementById('message');
+
+                // Exibe a resposta do servidor
+                if (response.ok) {
+                    messageElement.style.color = 'green';
+                    messageElement.textContent = data.message;
+                } else {
+                    messageElement.style.color = 'red';
+                    messageElement.textContent = `Erro: ${data.message}`;
+                }
+            } catch (error) {
+                // Exibe uma mensagem de erro se a requisição falhar
+                console.error('Erro ao enviar os dados:', error);
+                const messageElement = document.getElementById('message');
+                messageElement.style.color = 'red';
+                messageElement.textContent = 'Erro ao enviar os dados. Tente novamente.';
+            }
+        });
+    </script>
+
+</body>
+</html>
+

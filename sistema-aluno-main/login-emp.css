@@ -1,0 +1,203 @@
+html{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body{
+    background-color: #272C32;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*COMEÇO NAVEGAÇÃO*/
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+h1{
+    justify-self: center;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 5vh;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    padding-right: 30vh;
+    background-color: transparent;
+}
+a img{
+    width: 40vh;
+    margin-left: 2vh;
+}
+
+.button{
+    background-color: white;
+    width: 18vh;
+    height: 4vh;
+    border-radius: 1vh;
+    text-decoration: none;
+    align-content: center;
+    text-align: center;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 1.2vh;
+    margin-right: 2vh;    
+}
+
+/*FIM NAVEGAÇÃO*/
+
+#login{
+    width: 100%;
+    background: linear-gradient(45deg, #272C32 30%, #2b313a0c 100%) ;
+    position: absolute;
+    height: 100%;
+    color: white;
+    font-family: "Rajdhani", sans-serif;
+    display: grid;
+    grid-template-rows: .1fr .5fr .1fr;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+}
+
+#login input{
+    width: 40vh;
+    height: 5vh;
+    margin: 0;
+    padding: 0;
+    justify-self: center;
+    padding-left: 1.5vh;
+}
+
+.dot{
+    position: absolute;
+    z-index: 3;
+    float: left;
+    padding-top: 10vh;
+    padding-left: 5vh;
+    height: 50vh;
+}
+
+.grid{
+    position: absolute;
+    z-index: 4;
+    align-self: flex-end;
+    width: 20vh;
+    top: 70%;
+    right: 2%;
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    justify-self: center;
+    font-size: 5vh;
+    font-weight: 500;
+}
+
+span{
+    position: fixed;
+    z-index: 5;
+    background-color: transparent;
+    height: 2vh;
+    align-content: center;
+    
+}
+
+span img{
+    width: 2vh;
+    align-self: center;
+    text-align: center;
+    background-color: white;
+}
+
+.eye{
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    width: 3vh;
+    position: absolute;
+    z-index: 5;
+    align-self: center;
+    padding-bottom: 1vh;
+    right: 1em;
+}
+
+#senha{
+    margin:0;
+    padding: 0;
+    justify-items: center;
+}
+
+button{
+    margin: 0;
+    padding: 0;
+    width: 10vh;
+    height: 5vh;
+    justify-self: center;
+    background-color: white;
+    border: none;
+    border-radius: 1vh;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.rec{
+    color: white;
+}
+
+#area{
+    display: grid;
+    grid-template-rows: auto;
+}
+h4{
+    margin: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+/*SCRIPT*/
+
+  
+  /* ---- particles.js container ---- */
+  
+  #particles-js{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+
+  footer{
+    font-family: "Rajdhani", sans-serif;
+    color: white;
+    font-weight: 500;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}

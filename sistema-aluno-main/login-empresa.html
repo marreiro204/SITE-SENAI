@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-emp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>Portal Estágios</title>
+</head>
+<body>
+
+    <nav>
+      <a href="index.html"><img src="img/logo.png"></a>
+      <h1>BEM-VINDO</h1>
+      <a class="button" href="index.html">VOLTAR AO SITE</a>
+    </nav>
+
+    <div id="login">
+      <img class="dot" src="img/dot-4.png">
+      <img class="grid" src="img/dot-2.png">
+      <h3>LOGIN, EMPRESA</h3>
+      <div id="area">
+        <h4>CÓDIGO DE ACESSO:</h4>
+        <input id="user" type="number" placeholder="xxxxxxxxx">
+        <h4>SENHA:</h4>
+        <div id="senha">
+          <input id="password" placeholder="******">
+          <span class="olho"><button class="eye"><img src="img/closed.png"></button></span>
+        </div>
+        <a class="rec" href="">Recuperar Senha</a>
+        <button onclick="login()" type="submit">LOGIN</button>
+      </div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <footer>SENAI&copy2024</footer>
+    <script src="particles.js"></script>
+    <script src="app-2.js"></script>
+
+    
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+<script>
+  function login(){
+
+
+const user = document.getElementById("user").value;
+const password = document.getElementById("password").value;
+
+if (user == "12345" && password == "12345"){
+    window.open("portal-emp.html", "_self");
+}
+else{
+    window.alert("Senha Errada");
+}
+
+}
+</script>
+
+</body>
+</html>

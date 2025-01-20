@@ -1,0 +1,584 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+body {
+    background-color: rgba(39, 44, 50, 1);
+
+}
+
+
+/* INICIO DA HEADLINE DA PAGINA */
+
+.container-headline {
+    display: flex;
+    height: auto;
+    margin-left: 2vw;
+
+
+}
+
+.class-title {
+    justify-content: end;
+    display: flex;
+    margin-left: 5vw;
+    gap: 4vh;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+
+}
+
+
+.class-logo-headline img {
+
+    height: 80px;
+    margin-left: 15vw;
+    margin-top: 0.03vw;
+
+}
+
+
+.class-title p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+#id-portal-acess {
+    border-radius: 5px;
+    border: 8px solid white;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    position: relative;
+    bottom: 8px;
+    text-decoration: none;
+}
+
+#id-portal-acess a {
+
+    color: black;
+    text-decoration: none;
+
+}
+
+a:link{
+
+    text-decoration: none;
+}
+
+
+#id-portal-acess:hover {
+    background-color: black;
+    border-color: black;
+    color: white;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+/* FIM DA HEADLINE DA PAGINA */
+
+/* INICIO DA MIDLINE DA PAGINA */
+
+#id-action {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    max-width: 32vw;
+
+}
+
+button {
+    padding: 15px 15px;
+}
+
+#id-contratar {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    border: solid 2px black;
+    width: 15vw;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+
+
+}
+
+
+#id-contratar a,
+#id-estagiar a {
+
+    text-decoration: none;
+    color: black;
+}
+
+#id-estagiar {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    border: solid 2px black;
+    background-color: rgb(255, 0, 0);
+    width: 15vw;
+    margin-top: 10px;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+#id-estagiar:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#id-contratar:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+.class-midline {
+    margin-left: 17vw;
+    position: relative;
+    top: 4vw;
+}
+
+/* FIM DA MIDLINE DA PAGINA */
+
+
+/* CARROSEL DE LOGO */
+.class-logo-carousel {
+    top: 18vw;
+    background-color: rgb(39, 44, 50);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+    white-space: nowrap;
+    position: relative;
+}
+
+.class-logo-carousel img {
+    height: 4vw;
+    max-height: 3vw;
+    width: auto;
+    max-width: none;
+    min-width: 6vw;
+    margin: 0 2vw;
+}
+
+#id-logo-tag {
+    display: flex;
+    justify-content: center;
+    bottom: 1vw;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    overflow: hidden;
+    letter-spacing: .2em;
+    font-weight: 700;
+
+}
+
+.class-logo-tag {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+}
+
+.class-logo-carousel:before,
+.class-logo-carousel:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.class-logo-carousel:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(39, 44, 50, 0.795), rgba(39, 44, 50, 1));
+}
+
+.class-logo-carousel:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(39, 44, 50, 0.795), rgba(39, 44, 50, 1));
+}
+
+.class-slide {
+    display: inline-block;
+    animation: 30s slide infinite linear;
+}
+
+/* INICIO DO CARROSEL */
+.carousel {
+    position: absolute;
+    top: 10vw;
+    left: 60vw;
+    width: 20vw;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 1s ease;
+}
+
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* FIM DO CARROSEL */
+
+/* INICIO DA BEREADY */
+
+.beready-section {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgb(0, 4, 41);
+    margin-top: 28rem;
+    padding: 6.5rem 1rem;
+
+}
+
+.class-beready-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-break: auto;
+
+}
+
+.class-beready-grid>h2 {
+    position: relative;
+    margin-top: 5rem;
+    font-size: 1rem;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+
+}
+
+.class-beready-grid>p {
+    letter-spacing: 0;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: 700;
+    max-width: 60rem;
+    text-align: center;
+
+}
+
+.beready-section>.container {
+    color: rgb(255, 255, 255);
+    font-family: Inter, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 76.875rem;
+    width: 100%;
+}
+
+
+.class-accord {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.486);
+    padding-bottom: 0.5rem;
+    padding: .5em;
+    position: relative;
+    cursor: pointer;
+}
+
+.extra-content {
+    display: none;
+    line-height: 2.5rem;
+    margin-top: 5px;
+
+}
+
+.class-accord::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url(images/plus\ 1.png) no-repeat center;
+    width: 2rem;
+    height: 2rem;
+
+
+}
+
+.class-accord.closed::after {
+    opacity: 0;
+
+}
+
+.class-strong-beready {
+    color: rgb(226, 59, 59);
+}
+
+.beready-images {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+    gap: 5rem;
+
+}
+
+.beready-images>img {
+    max-width: 40rem;
+    border-radius: 15px;
+
+}
+
+
+.beready-images>a:hover {
+
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 7px 7px rgb(21, 40, 214);
+    transform: scale(1.025);
+    transition: 0.5s ease-in-out;
+}
+
+/* FIM DA BEREADY */
+
+/* INICIO DA BENEF */
+
+.benef-section {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(4, 27, 74, 0.963);
+    overflow: hidden;
+    display: flex;
+    padding: 4rem 1rem;
+
+}
+
+.class-benef-grid {
+
+    position: relative;
+
+
+}
+
+.benef-section>.container {
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-family: Inter, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90rem;
+    width: 100%;
+
+}
+
+
+.benef-column {
+
+    min-width: 76.875rem;
+
+}
+
+
+.benef-image img {
+    transform: translateX(-15rem);
+    border-radius: 15px;
+    box-shadow: 5px 5px rgb(117, 116, 119);
+    height: auto;
+}
+
+.benef-column>h2 {
+    letter-spacing: 0;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    max-width: 50%;
+}
+
+
+.benef-list>li {
+    list-style: none;
+    align-items: center;
+    display: flex;
+    max-width: 60%;
+    gap: 25px;
+    font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+
+}
+
+.benef-strong,
+.benef-list-strong {
+
+    color: rgb(255, 26, 26);
+
+}
+
+
+.benef-button {
+    margin: 0;
+    padding: 0;
+    display: block;
+    margin-left: 2rem;
+}
+
+.benef-button>button {
+
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+
+
+
+/* FIM DA BENEF */
+
+/* INICIO RODAPE */
+
+.footer {
+
+    padding: 4rem 1rem;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    overflow: hidden;
+    font-family: Assistant, sans-serif;
+
+}
+
+.footer>.container {
+
+    max-width: 76.875rem;
+    margin: 0 auto;
+}
+
+.footer>.container ul {
+
+    list-style: none;
+    padding: 0;
+
+
+}
+
+.manu-candidato li {}
+
+.footer-nav-wrap {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+
+}
+
+.footer-column-head {
+
+    letter-spacing: -.5px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+}
+
+.footer-column {
+
+    position: relative;
+
+}
+
+.footer-column li:hover {
+
+    cursor: pointer;
+
+}
+
+
+.footer-column::after {
+
+    content: "";
+    right: 10px;
+    width: 1px;
+    height: 100%;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.527);
+    position: absolute;
+}
+
+.footer-column:last-child::after {
+    content: none;
+}
+
+
+.menu-programa,
+.menu-candidato,
+.menu-empresa,
+.menu-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.705);
+}
+
+
+
+
+
+/* FIM RODAPE */
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

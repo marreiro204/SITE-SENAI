@@ -1,0 +1,140 @@
+/* Resetando margens e preenchimento padrão do navegador */
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: rgba(39, 44, 50, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Isso garante que a logo e o formulário fiquem em uma coluna */
+    align-items: center; /* Centraliza o conteúdo */
+}
+
+.header {
+    margin-bottom: 20px; /* Espaçamento entre a logo e o formulário */
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+}
+
+.header img{
+    width: 500px;
+}
+
+/* Container que envolve todo o formulário */
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Aumentando a largura máxima */
+    text-align: left;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    color: #333;
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;  /* Espaçamento entre os campos */
+    justify-content: space-between;
+}
+
+/* Estilo para os grupos de campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;  /* Largura reduzida para campos lado a lado */
+}
+
+/* Estilo das labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilo dos inputs e selects */
+input[type="text"],
+input[type="date"],
+select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo para o botão de envio */
+.submit-btn {
+    background-color: rgb(226, 59, 59);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+/* Efeito hover no botão */
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do texto de sucesso ou erro */
+#message {
+    font-size: 14px;
+    color: #d9534f;
+    margin-top: 15px;
+}
+
+/* Ajuste para campos de formulário opcionais */
+input[placeholder="opcional"],
+input[placeholder="Digite a carga horária"],
+input[placeholder="Digite o período do contrato"],
+input[placeholder="Digite o valor da bolsa"] {
+    color: #888;
+}
+
+/* Estilo do link para voltar à página inicial */
+.voltar-link {
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo dentro do link */
+    margin-top: -30px; /* Espaço entre o botão e o link */
+    width: 100%; /* Garante que o link ocupe toda a largura */
+    text-align: center; /* Centraliza o texto dentro do link */
+}
+
+.voltar-link a {
+    text-decoration: none;
+    color: rgb(0, 0, 0); /* Cor do texto do link */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.voltar-link a:hover {
+    color: #13498f; /* Cor do link ao passar o mouse */
+}
+
+/* Estilo do texto de sucesso ou erro */
+#message {
+    font-size: 14px;
+    color: #d9534f;
+    margin-top: 15px;
+}
